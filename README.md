@@ -22,3 +22,35 @@ The 'alpha' language option will generate 25 templates of alphabetical language 
 - [X] ABS
 - [X] Ballerina
 - [ ] Crystal
+- [ ] D
+- [ ] Elixir
+- [ ] Fortran
+- [ ] FreeBasic
+- [ ] Go
+- [ ] Haskell
+- [ ] Icon
+- [ ] Javascript
+- [X] Julia
+- [ ] Kotlin
+- [ ] Lua
+- [ ] Mathematica
+- [X] Nim
+- [ ] Ocaml
+- [ ] Odin
+- [ ] Perl
+- [ ] Phix
+- [ ] Python
+- [ ] R
+- [ ] Racket
+- [ ] Raku
+- [ ] Ruby
+- [ ] Scala
+- [ ] Swift
+- [ ] Tcl
+- [ ] Unix
+- [ ] V
+- [ ] Wren
+- [ ] XBasic
+- [ ] YaBasic
+- [ ] Zig
+- [ ] Zkl
