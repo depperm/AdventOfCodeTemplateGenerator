@@ -17,3 +17,8 @@ This is meant to create advent of code templates for a lot of languages.
 ### Description
 
 The 'alpha' language option will generate 25 templates of alphabetical language for the year option. If a language is defined a folder for the day will be generated with empty input files, template script, and a util script.
+
+### Templates
+- [X] ABS
+- [X] Ballerina
+- [ ] Crystal
