@@ -1,0 +1,30 @@
+
+partOne = f(input) {
+    return 1
+}
+partTwo = f(input) {
+    return 2
+}
+
+if args().len() == 4 || args().len() == 3 {
+    input = ''
+    part = arg(2)
+    if part != "one" && part != "two" {
+        echo("Part ($part) needs to be one or two")
+        exit(1)
+    }
+    file = "$part.txt"
+    if args().len() == 4 {
+        file = arg(3)
+    }
+    input = `cat $file`.split("\n")
+    # echo(input[0])
+    if part == 'one' {
+        echo(partOne(input))
+    } else {
+        echo(partTwo(input))
+    }
+} else {
+    echo("Need to specify part and optionally input (demo)")
+    exit(1)
+}
