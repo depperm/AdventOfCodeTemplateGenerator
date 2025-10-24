@@ -9,7 +9,6 @@ proc partTwo(input:seq[string]):int =
 
 var args = commandLineParams()
 if len(args) == 1 or len(args) == 2:
-  #let input = ""
   let part = args[0]
   if part != "one" and part != "two":
     quit(fmt"Part ({part}) needs to be one or two", 1)
@@ -22,13 +21,5 @@ if len(args) == 1 or len(args) == 2:
     echo partOne(input)
   else:
     echo partTwo(input)
-  #[
-  input = `cat $file`.split("\n")
-  # echo(input[0])
-  if part == 'one' {
-      echo(partOne(input))
-  } else {
-      echo(partTwo(input))
-  }]#
 else:
   quit(fmt"Need to specify part and optionally input file", 1)
