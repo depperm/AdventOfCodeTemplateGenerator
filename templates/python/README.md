@@ -2,4 +2,4 @@
 [Documentation](https://docs.python.org/3/)
 
 ## How to run
-``
+`py advent.py <part> <file?>`
