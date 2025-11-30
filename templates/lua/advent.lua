@@ -20,9 +20,9 @@ if #arg == 1 or #arg == 2 then
     for line in io.lines(file) do
         input[#input + 1] = line
     end
-    for n, c in pairs(input) do
-        print('#' .. n .. ': ', c)
-    end
+    --for n, c in pairs(input) do
+    --    print('#' .. n .. ': ', c)
+    --end
     if part == "one" then
         print(partOne(input))
     else

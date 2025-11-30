@@ -29,11 +29,15 @@ def argparse():
             try:
                 day = int(sys.argv[1:][i + 1])
             except ValueError:
-                exit("Day must be a number")
-            if day < 1:
-                exit("Day must be at least 1")
-            if day > 25:
-                exit("Day must be less than 26")
+                if sys.argv[1:][i + 1] == "all":
+                    day = "all"
+                else:
+                    exit("Day must be a number or all")
+            if day != "all":
+                if day < 1:
+                    exit("Day must be at least 1")
+                if day > 25:
+                    exit("Day must be less than 26")
         elif sys.argv[1:][i] == "-l":
             lang = sys.argv[1:][i + 1]
             if lang not in AVAILABLE_LANGS and lang != "alpha":
@@ -61,6 +65,8 @@ if __name__ == "__main__":
 
     if args[0] == "alpha":
         langs = AVAILABLE_LANGS
+        while len(langs) < 25:
+            langs += AVAILABLE_LANGS
         while len(langs) > 25:
             _ = langs.pop(random.randint(0, len(langs) - 1))
         # print(f"alpha {langs}")
@@ -78,19 +84,44 @@ if __name__ == "__main__":
             except Exception as e:
                 exit(f"An error occurred: {e}")
     else:
-        # create day dir if does not exist
-        if not os.path.isdir(
-            os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1]))
-        ):
-            os.mkdir(os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1])))
-        # fill in lang appropriate content
-        from_directory = os.path.join(os.getcwd(), "templates", args[0])
-        to_directory = os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1]))
+        if args[1] == "all":
+            for d in range(1, 25):
+                # create day dir if does not exist
+                if not os.path.isdir(
+                    os.path.join(os.getcwd(), "advent", str(args[2]), str(d))
+                ):
+                    os.mkdir(os.path.join(os.getcwd(), "advent", str(args[2]), str(d)))
+                # fill in lang appropriate content
+                from_directory = os.path.join(os.getcwd(), "templates", args[0])
+                to_directory = os.path.join(os.getcwd(), "advent", str(args[2]), str(d))
 
-        try:
-            _ = shutil.copytree(from_directory, to_directory, dirs_exist_ok=True)
-        except Exception as e:
-            exit(f"An error occurred: {e}")
-        # make empty input
-        _ = Path(os.path.join(to_directory, "one.txt")).touch()
-        _ = Path(os.path.join(to_directory, "two.txt")).touch()
+                try:
+                    _ = shutil.copytree(
+                        from_directory, to_directory, dirs_exist_ok=True
+                    )
+                except Exception as e:
+                    exit(f"An error occurred: {e}")
+                # make empty input
+                _ = Path(os.path.join(to_directory, "one.txt")).touch()
+                _ = Path(os.path.join(to_directory, "two.txt")).touch()
+        else:
+            # create day dir if does not exist
+            if not os.path.isdir(
+                os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1]))
+            ):
+                os.mkdir(
+                    os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1]))
+                )
+            # fill in lang appropriate content
+            from_directory = os.path.join(os.getcwd(), "templates", args[0])
+            to_directory = os.path.join(
+                os.getcwd(), "advent", str(args[2]), str(args[1])
+            )
+
+            try:
+                _ = shutil.copytree(from_directory, to_directory, dirs_exist_ok=True)
+            except Exception as e:
+                exit(f"An error occurred: {e}")
+            # make empty input
+            _ = Path(os.path.join(to_directory, "one.txt")).touch()
+            _ = Path(os.path.join(to_directory, "two.txt")).touch()
