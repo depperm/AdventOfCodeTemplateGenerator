@@ -14,7 +14,7 @@ if len(args) == 1 or len(args) == 2:
     part = args[0]
     if part != "one" and part != "two":
         quit("Part ({part}) needs to be one or two".format(part=part))
-    filename = "{part}.txt".format(part=part)
+    filename = "puzzleInput.txt"
     if len(args) == 2:
         filename = args[1]
 

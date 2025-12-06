@@ -12,7 +12,7 @@ if #arg == 1 or #arg == 2 then
         print("Part (%s) needs to be one or two", part)
         os.exit(1)
     end
-    local file = string.format("%s.txt", part)
+    local file = "puzzleInput.txt"
     if #arg == 2 then
         file = arg[2]
     end

@@ -12,7 +12,7 @@ if len(args) == 1 or len(args) == 2:
   let part = args[0]
   if part != "one" and part != "two":
     quit(fmt"Part ({part}) needs to be one or two", 1)
-  var file = fmt"{part}.txt"
+  var file = "puzzleInput.txt"
   if len(args) == 2:
     file = args[1]
   let input = multiReplace(readFile(file),[("\r","")]).split('\n')

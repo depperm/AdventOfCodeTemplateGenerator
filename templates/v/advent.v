@@ -18,7 +18,7 @@ fn main() {
         if part != "one" && part != "two" {
             panic("Part (${part}) needs to be one or two")
         }
-        mut filename := "${part}.txt"
+        mut filename := "puzzleInput.txt"
         if os.args[1..].len == 2  {
             filename = os.args[1..][1]
         }

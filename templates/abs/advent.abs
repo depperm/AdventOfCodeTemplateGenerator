@@ -13,7 +13,7 @@ if args().len() == 4 || args().len() == 3 {
         echo("Part ($part) needs to be one or two")
         exit(1)
     }
-    file = "$part.txt"
+    file = "puzzleInput.txt"
     if args().len() == 4 {
         file = arg(3)
     }
@@ -28,3 +28,9 @@ if args().len() == 4 || args().len() == 3 {
     echo("Need to specify part and optionally input (demo)")
     exit(1)
 }
+set input []
+set infile [open $file]
+while {[gets $infile line] >= 0} {
+    lappend input {line}
+}
+puts input

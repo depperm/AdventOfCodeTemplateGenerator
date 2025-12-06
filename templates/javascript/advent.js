@@ -13,7 +13,7 @@ if (args.length === 1 || args.length === 2) {
   if (part !== "one" && part !== "two") {
     throw Error(`Part (${part}) needs to be one or two`);
   }
-  let filename = `${part}.txt`;
+  let filename = `puzzleInput.txt`;
   if (args.length === 2) {
     filename = args[1];
   }

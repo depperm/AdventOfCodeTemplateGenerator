@@ -2,4 +2,4 @@
 [Documentation](https://www.tcl-lang.org/doc/)
 
 ## How to run
-``
+`tclsh .\advent.tcl <part> <filename?>`

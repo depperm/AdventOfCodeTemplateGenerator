@@ -34,13 +34,13 @@ The 'alpha' language option will generate 25 templates of alphabetical language 
 - [ ] Elixir
 - [ ] Fortran
 - [ ] FreeBasic
-- [ ] Go
+- [X] Go
 - [ ] Haskell
 - [ ] Icon
 - [X] Javascript
 - [X] Julia
 - [ ] Kotlin
-- [ ] Lua
+- [x] Lua
 - [ ] Mathematica
 - [X] Nim
 - [ ] Ocaml
@@ -54,11 +54,11 @@ The 'alpha' language option will generate 25 templates of alphabetical language 
 - [ ] Ruby
 - [ ] Scala
 - [ ] Swift
-- [ ] Tcl
+- [X] Tcl
 - [ ] Unix
-- [ ] V
+- [X] V
 - [ ] Wren
 - [ ] XBasic
 - [ ] YaBasic
-- [ ] Zig
-- [ ] Zkl
+- ~~[ ] Zig~~ (failed to get to work on Windows)
+- ~~[ ] Zkl~~ (failed to get figure out how to run from src)

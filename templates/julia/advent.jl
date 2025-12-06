@@ -14,7 +14,7 @@ if length(ARGS) == 1 || length(ARGS) == 2
         exit(1)
     end
 
-    file = part*".txt"
+    file = "puzzleInput.txt"
     if length(ARGS) == 2
         file = ARGS[2]
     end

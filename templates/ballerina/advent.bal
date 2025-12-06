@@ -8,13 +8,14 @@ function partTwo(string[] input) returns int {
 }
 
 configurable string part = "one";
-configurable string file = "sample.txt";
+configurable string filename = "puzzleInput.txt";
 
 public function main() returns error? {
     if part != "one" && part != "two" {
         return error("Part ("+part+") needs to be one or two");
     }
-    string[] input = check io:fileReadLines(file);
+
+    string[] input = check io:fileReadLines(filename);
     if part == "one" {
         io:println(partOne(input));
     } else {

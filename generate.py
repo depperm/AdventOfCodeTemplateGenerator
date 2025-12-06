@@ -57,13 +57,13 @@ def argparse():
 
 
 if __name__ == "__main__":
-    args = argparse()
+    lang, day, year = argparse()
 
     # create year dir if does not exist
-    if not os.path.isdir(os.path.join(os.getcwd(), "advent", str(args[2]))):
-        os.mkdir(os.path.join(os.getcwd(), "advent", str(args[2])))
+    if not os.path.isdir(os.path.join(os.getcwd(), "advent", str(year))):
+        os.mkdir(os.path.join(os.getcwd(), "advent", str(year)))
 
-    if args[0] == "alpha":
+    if lang == "alpha":
         langs = AVAILABLE_LANGS
         while len(langs) < 25:
             langs += AVAILABLE_LANGS
@@ -73,27 +73,27 @@ if __name__ == "__main__":
         for i, lang in enumerate(langs):
             # create day dir if does not exist
             if not os.path.isdir(
-                os.path.join(os.getcwd(), "advent", str(args[2]), str(i + 1))
+                os.path.join(os.getcwd(), "advent", str(year), str(i + 1))
             ):
-                os.mkdir(os.path.join(os.getcwd(), "advent", str(args[2]), str(i + 1)))
+                os.mkdir(os.path.join(os.getcwd(), "advent", str(year), str(i + 1)))
             from_directory = os.path.join(os.getcwd(), "templates", lang)
-            to_directory = os.path.join(os.getcwd(), "advent", str(args[2]), str(i + 1))
+            to_directory = os.path.join(os.getcwd(), "advent", str(year), str(i + 1))
 
             try:
                 _ = shutil.copytree(from_directory, to_directory, dirs_exist_ok=True)
             except Exception as e:
                 exit(f"An error occurred: {e}")
     else:
-        if args[1] == "all":
+        if day == "all":
             for d in range(1, 25):
                 # create day dir if does not exist
                 if not os.path.isdir(
-                    os.path.join(os.getcwd(), "advent", str(args[2]), str(d))
+                    os.path.join(os.getcwd(), "advent", str(year), str(d))
                 ):
-                    os.mkdir(os.path.join(os.getcwd(), "advent", str(args[2]), str(d)))
+                    os.mkdir(os.path.join(os.getcwd(), "advent", str(year), str(d)))
                 # fill in lang appropriate content
-                from_directory = os.path.join(os.getcwd(), "templates", args[0])
-                to_directory = os.path.join(os.getcwd(), "advent", str(args[2]), str(d))
+                from_directory = os.path.join(os.getcwd(), "templates", lang)
+                to_directory = os.path.join(os.getcwd(), "advent", str(year), str(d))
 
                 try:
                     _ = shutil.copytree(
@@ -102,26 +102,20 @@ if __name__ == "__main__":
                 except Exception as e:
                     exit(f"An error occurred: {e}")
                 # make empty input
-                _ = Path(os.path.join(to_directory, "one.txt")).touch()
-                _ = Path(os.path.join(to_directory, "two.txt")).touch()
+                _ = Path(os.path.join(to_directory, "puzzleInput.txt")).touch()
         else:
             # create day dir if does not exist
             if not os.path.isdir(
-                os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1]))
+                os.path.join(os.getcwd(), "advent", str(year), str(day))
             ):
-                os.mkdir(
-                    os.path.join(os.getcwd(), "advent", str(args[2]), str(args[1]))
-                )
+                os.mkdir(os.path.join(os.getcwd(), "advent", str(year), str(day)))
             # fill in lang appropriate content
-            from_directory = os.path.join(os.getcwd(), "templates", args[0])
-            to_directory = os.path.join(
-                os.getcwd(), "advent", str(args[2]), str(args[1])
-            )
+            from_directory = os.path.join(os.getcwd(), "templates", lang)
+            to_directory = os.path.join(os.getcwd(), "advent", str(year), str(day))
 
             try:
                 _ = shutil.copytree(from_directory, to_directory, dirs_exist_ok=True)
             except Exception as e:
                 exit(f"An error occurred: {e}")
             # make empty input
-            _ = Path(os.path.join(to_directory, "one.txt")).touch()
-            _ = Path(os.path.join(to_directory, "two.txt")).touch()
+            _ = Path(os.path.join(to_directory, "puzzleInput.txt")).touch()
