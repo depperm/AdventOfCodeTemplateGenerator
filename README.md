@@ -1,6 +1,6 @@
 # Advent Of Code Template Generator
 
-This is meant to create advent of code templates for a lot of languages.
+This is meant to create advent of code templates for a lot of languages. This was developed on Windows, there may be other changes on other OSes
 
 ## Options
 
@@ -45,19 +45,19 @@ The 'alpha' language option will generate 25 templates of alphabetical language 
 - [X] Nim
 - [ ] Ocaml
 - [ ] Odin
-- [ ] Perl
+- [X] Perl
 - [ ] Phix
 - [X] Python
 - [ ] R
 - [ ] Racket
-- [ ] Raku
+- ~~[ ] Raku~~ (failed to get raku to work, got rakubrew)
 - [ ] Ruby
 - [ ] Scala
 - [ ] Swift
 - [X] Tcl
 - [ ] Unix
 - [X] V
-- [ ] Wren
+- [X] Wren
 - [ ] XBasic
 - [ ] YaBasic
 - ~~[ ] Zig~~ (failed to get to work on Windows)
